@@ -1,0 +1,18 @@
+type Mutation {
+  createCustomer(input: CreateCustomerInput!): Customer
+  updateCustomer(input: UpdateCustomerInput!): Customer
+}
+
+type Customer {
+  id: ID!
+  name: String!
+}
+
+input CreateCustomerInput {
+  name: String!
+}
+
+input UpdateCustomerInput {
+  customerId: String!
+  name: String!
+}

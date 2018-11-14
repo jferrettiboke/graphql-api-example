@@ -1,0 +1,40 @@
+type Query {
+  getCustomerOrders(input: GetCustomerOrdersInput!): [Order!]!
+}
+
+type Mutation {
+  createOrder(input: CreateOrderInput!): Order
+  acceptOrder(input: AcceptOrderInput!): Order
+}
+
+type Order {
+  id: ID!
+  status: OrderStatus!
+  amount: Int!
+  currency: CURRENCY!
+}
+
+enum OrderStatus {
+  PENDING
+  ACCEPTED
+  CANCELED
+}
+
+enum Currency {
+  EUR
+  USD
+}
+
+input CreateOrderInput {
+  customerId: ID!
+  amount: Int!
+  currency: CURRENCY!
+}
+
+input AcceptOrderInput {
+  orderId: ID!
+}
+
+input GetCustomerOrdersInput {
+  customerId: ID!
+}

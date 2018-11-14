@@ -1,0 +1,27 @@
+enum Currency {
+  EUR
+  USD
+}
+
+# Customer Service
+
+type Customer {
+  id: ID!
+  name: String!
+}
+
+# Order Service
+
+enum OrderStatus {
+  PENDING
+  ACCEPTED
+  CANCELED
+}
+
+type Order {
+  id: ID!
+  customerId: ID!
+  status: OrderStatus!
+  amount: Int!
+  currency: Currency!
+}
