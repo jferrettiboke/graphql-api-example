@@ -6,10 +6,10 @@ export default {
     async getCustomerOrders(
       root,
       {
-        input: { customerId },
-        context,
-        info
-      }
+        input: { customerId }
+      },
+      context,
+      info
     ) {
       return await orderService.getOrdersByCustomerId({ customerId });
     }
